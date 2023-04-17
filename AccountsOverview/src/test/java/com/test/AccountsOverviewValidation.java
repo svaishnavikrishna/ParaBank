@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import com.pages.AccountsOverviewPage;
 import com.pages.LoginPage;
+import com.pages.LogoutPage;
 import com.util.BaseClass;
 
 public class AccountsOverviewValidation extends BaseClass {
@@ -32,8 +33,8 @@ public class AccountsOverviewValidation extends BaseClass {
 	
 	@AfterClass
 	public void end() {
-		driver.findElement(By.linkText("Log Out")).click();
-		driver.close();
+		LogoutPage logout = new LogoutPage(driver);
+		logout.logout();
 	}
 
 }

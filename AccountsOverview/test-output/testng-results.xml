@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-17T21:36:27 IST" name="Default suite" finished-at="2023-04-17T21:37:25 IST" duration-ms="57877">
+  <suite started-at="2023-04-17T21:45:26 IST" name="Suite" finished-at="2023-04-17T21:45:37 IST" duration-ms="10325">
     <groups>
     </groups>
-    <test started-at="2023-04-17T21:36:27 IST" name="Default test" finished-at="2023-04-17T21:37:25 IST" duration-ms="57877">
+    <test started-at="2023-04-17T21:45:26 IST" name="Test" finished-at="2023-04-17T21:45:37 IST" duration-ms="10325">
       <class name="com.test.AccountsOverviewValidation">
-        <test-method is-config="true" signature="start()[pri:0, instance:com.test.AccountsOverviewValidation@644baf4a]" started-at="2023-04-17T21:36:27 IST" name="start" finished-at="2023-04-17T21:36:40 IST" duration-ms="12724" status="PASS">
+        <test-method is-config="true" signature="start()[pri:0, instance:com.test.AccountsOverviewValidation@f78a47e]" started-at="2023-04-17T21:45:26 IST" name="start" finished-at="2023-04-17T21:45:33 IST" duration-ms="7103" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method signature="registerNewUser()[pri:0, instance:com.test.AccountsOverviewValidation@644baf4a]" started-at="2023-04-17T21:36:40 IST" name="registerNewUser" finished-at="2023-04-17T21:37:22 IST" duration-ms="41784" status="FAIL">
+        <test-method signature="registerNewUser()[pri:0, instance:com.test.AccountsOverviewValidation@f78a47e]" started-at="2023-04-17T21:45:33 IST" name="registerNewUser" finished-at="2023-04-17T21:45:35 IST" duration-ms="1947" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [ParaBank | Accounts Overview] but found [ParaBank | Error]]]>
@@ -25,7 +25,7 @@ at org.testng.Assert.assertEquals(Assert.java:131)
 at org.testng.Assert.assertEquals(Assert.java:655)
 at org.testng.Assert.assertEquals(Assert.java:665)
 at com.pages.AccountsOverviewPage.validateAccountsOverviewPage(AccountsOverviewPage.java:22)
-at com.test.AccountsOverviewValidation.registerNewUser(AccountsOverviewValidation.java:29)
+at com.test.AccountsOverviewValidation.registerNewUser(AccountsOverviewValidation.java:30)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -60,11 +60,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerNewUser -->
-        <test-method is-config="true" signature="end()[pri:0, instance:com.test.AccountsOverviewValidation@644baf4a]" started-at="2023-04-17T21:37:24 IST" name="end" finished-at="2023-04-17T21:37:25 IST" duration-ms="1251" status="PASS">
+        <test-method is-config="true" signature="end()[pri:0, instance:com.test.AccountsOverviewValidation@f78a47e]" started-at="2023-04-17T21:45:35 IST" name="end" finished-at="2023-04-17T21:45:37 IST" duration-ms="1250" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- end -->
       </class> <!-- com.test.AccountsOverviewValidation -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
