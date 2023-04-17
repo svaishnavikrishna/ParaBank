@@ -1,0 +1,7 @@
+com\pages\RegistrationPage.class
+com\util\BaseClass.class
+com\util\ReadFromPropertiesFile.class
+com\pages\LoginPage.class
+com\pages\LogoutPage.class
+com\test\AccountsOverviewValidation.class
+com\util\ReadFromExcelFile.class
