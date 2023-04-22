@@ -1,18 +1,17 @@
 package com.test;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.pages.AccountsOverviewPage;
 import com.pages.LoginPage;
 import com.pages.LogoutPage;
+import com.pages.UpdateContactInfoPage;
 import com.util.BaseClass;
 
-public class AccountsOverviewValidation extends BaseClass {
+public class UpdateContactInfoValidations extends BaseClass {
+
 	WebDriver driver;
 
 	@BeforeClass
@@ -26,8 +25,8 @@ public class AccountsOverviewValidation extends BaseClass {
 		LoginPage login = new LoginPage(driver);
 		login.registerNewUser();
 
-		AccountsOverviewPage accountsOverview = new AccountsOverviewPage(driver);
-		accountsOverview.validateAccountsOverviewPage();
+		UpdateContactInfoPage updateConactInfo = new UpdateContactInfoPage(driver);
+		updateConactInfo.updateDetails();
 
 	}
 

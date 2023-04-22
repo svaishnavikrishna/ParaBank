@@ -1,18 +1,16 @@
 package com.test;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.pages.AccountsOverviewPage;
+import com.pages.BillPayPage;
 import com.pages.LoginPage;
 import com.pages.LogoutPage;
 import com.util.BaseClass;
 
-public class AccountsOverviewValidation extends BaseClass {
+public class BillPayValidations extends BaseClass{
 	WebDriver driver;
 
 	@BeforeClass
@@ -25,12 +23,12 @@ public class AccountsOverviewValidation extends BaseClass {
 	public void registerNewUser() {
 		LoginPage login = new LoginPage(driver);
 		login.registerNewUser();
-
-		AccountsOverviewPage accountsOverview = new AccountsOverviewPage(driver);
-		accountsOverview.validateAccountsOverviewPage();
+		
+		BillPayPage billPayPage = new BillPayPage(driver);
+		billPayPage.billPaymentService();
 
 	}
-
+	
 	@AfterClass
 	public void end() {
 		LogoutPage logout = new LogoutPage(driver);

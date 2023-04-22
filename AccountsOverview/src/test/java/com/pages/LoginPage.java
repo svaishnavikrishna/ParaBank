@@ -6,6 +6,7 @@ import org.testng.Assert;
 
 import com.util.BaseClass;
 import com.util.ReadFromExcelFile;
+import com.util.ReadFromPropertiesFile;
 
 public class LoginPage extends BaseClass {
 
@@ -17,41 +18,43 @@ public class LoginPage extends BaseClass {
 
 	ReadFromExcelFile testInput = new ReadFromExcelFile();
 	
+	ReadFromPropertiesFile properties = new ReadFromPropertiesFile();
+	
 	String username;
 	
 	String password;
 
-	By usernameLocator = By.className("username");
+	By usernameLocator = By.className(properties.getLocator("usernameLocator"));
 
-	By passwordLocator = By.className("password");
+	By passwordLocator = By.className(properties.getLocator("passwordLocator"));
 
-	By loginButtonLocator = By.xpath("//input[@value='Log In']");
+	By loginButtonLocator = By.xpath(properties.getLocator("loginButtonLocator"));
 
-	By registerLinkLocator = By.linkText("Register");
+	By registerLinkLocator = By.linkText(properties.getLocator("registerLinkLocator"));
 
-	By firstNameLocator = By.id("customer.firstName");
+	By firstNameLocator = By.id(properties.getLocator("firstNameLocator"));
 
-	By lastNameLocator = By.id("customer.lastName");
+	By lastNameLocator = By.id(properties.getLocator("lastNameLocator"));
 
-	By addressLocator = By.id("customer.address.street");
+	By addressLocator = By.id(properties.getLocator("addressLocator"));
 
-	By cityLocator = By.id("customer.address.city");
+	By cityLocator = By.id(properties.getLocator("cityLocator"));
 
-	By stateLocator = By.id("customer.address.state");
+	By stateLocator = By.id(properties.getLocator("stateLocator"));
 
-	By zipcodeLocator = By.id("customer.address.zipCode");
+	By zipcodeLocator = By.id(properties.getLocator("zipcodeLocator"));
 
-	By phoneLocator = By.id("customer.phoneNumber");
+	By phoneLocator = By.id(properties.getLocator("phoneLocator"));
 
-	By ssnLocator = By.id("customer.ssn");
+	By ssnLocator = By.id(properties.getLocator("ssnLocator"));
 
-	By registrationUsernameLocator = By.id("customer.username");
+	By registrationUsernameLocator = By.id(properties.getLocator("registrationUsernameLocator"));
 
-	By registrationPasswordLocator = By.id("customer.password");
+	By registrationPasswordLocator = By.id(properties.getLocator("registrationPasswordLocator"));
 
-	By registrationConfirmPasswordLocator = By.id("repeatedPassword");
+	By registrationConfirmPasswordLocator = By.id(properties.getLocator("registrationConfirmPasswordLocator"));
 
-	By registrationRegisterLocator = By.xpath("//input[@value='Register']");
+	By registrationRegisterLocator = By.xpath(properties.getLocator("registrationRegisterLocator"));
 	
 	public void registerNewUser() {
 
@@ -59,43 +62,33 @@ public class LoginPage extends BaseClass {
 			driver.findElement(registerLinkLocator).click();
 			
 			String firstName = testInput.readTestDataExcel().get("FirstName");
-			System.out.println("First name is "+firstName);
 			driver.findElement(firstNameLocator).sendKeys(firstName);
 			
 			String lastName = testInput.readTestDataExcel().get("SecondName");
-			System.out.println("Last name is "+lastName);
 			driver.findElement(lastNameLocator).sendKeys(lastName);
 			
 			String address = testInput.readTestDataExcel().get("Address");
-			System.out.println("Address is "+address);
 			driver.findElement(addressLocator).sendKeys(address);
 			
 			String city = testInput.readTestDataExcel().get("City");
-			System.out.println("City is "+city);
 			driver.findElement(cityLocator).sendKeys(city);
 			
 			String state = testInput.readTestDataExcel().get("State");
-			System.out.println("State is "+state);
 			driver.findElement(stateLocator).sendKeys(state);
 			
 			String zipcode = testInput.readTestDataExcel().get("Zipcode");
-			System.out.println("Zipcode is "+zipcode);
 			driver.findElement(zipcodeLocator).sendKeys(zipcode);
 			
 			String phoneNumber = testInput.readTestDataExcel().get("Phone");
-			System.out.println("Phone number is "+phoneNumber);
 			driver.findElement(phoneLocator).sendKeys(phoneNumber);
 			
 			String ssn = testInput.readTestDataExcel().get("SSN");
-			System.out.println("SSN is "+ssn);
 			driver.findElement(ssnLocator).sendKeys(ssn);
 			
 		    String username = testInput.readTestDataExcel().get("Username");
-			System.out.println("Username is "+username);
 			driver.findElement(registrationUsernameLocator).sendKeys(username);
 			
 			String password = testInput.readTestDataExcel().get("Password");
-			System.out.println("Password is "+password);
 			driver.findElement(registrationPasswordLocator).sendKeys(password);
 			driver.findElement(registrationConfirmPasswordLocator).sendKeys(password);
 

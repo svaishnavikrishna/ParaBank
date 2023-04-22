@@ -4,15 +4,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import com.util.ReadFromPropertiesFile;
+
 public class AccountsOverviewPage {
 	
 	WebDriver driver;
+	
+	ReadFromPropertiesFile properties = new ReadFromPropertiesFile();
 
 	public AccountsOverviewPage(WebDriver driver) {
 		this.driver = driver;
 	}
 	
-	By accountsOverviewLocator = By.linkText("Accounts Overview");
+	By accountsOverviewLocator = By.linkText(properties.getLocator("accountsOverviewLocator"));
 	
 	public void validateAccountsOverviewPage() {
 		try {

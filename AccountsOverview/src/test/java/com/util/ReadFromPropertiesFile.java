@@ -36,4 +36,14 @@ public class ReadFromPropertiesFile {
 		String testDataPath = properties.getProperty("testDataPath");
 		return testDataPath;
 	}
+	
+	public String getLocator(String webLocator) {
+		String locator = properties.getProperty(webLocator);
+		return locator;
+	}
+	
+	public String getText(String textTobeRetrieved) {
+		String text = properties.getProperty(textTobeRetrieved);
+		return text;
+	}
 }
