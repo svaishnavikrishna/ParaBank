@@ -5,12 +5,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+import com.util.ReadFromExcelFile;
 import com.util.ReadFromPropertiesFile;
 
 public class OpenNewAccountPage {
 
 	WebDriver driver;
-
+	
+	
+	ReadFromExcelFile input = new ReadFromExcelFile();
 	ReadFromPropertiesFile properties = new ReadFromPropertiesFile();
 
 	public OpenNewAccountPage(WebDriver driver) {
@@ -34,7 +37,7 @@ public class OpenNewAccountPage {
 			typeOfAccount.selectByVisibleText(properties.getLocator("typeOfAccountLocator"));
 			driver.findElement(openNewAccountButtonLocator).click();
 			Thread.sleep(2000);
-			String expectedTitle = properties.getLocator("expectedTitleAfterOpeningAccount");
+			String expectedTitle = input.readTestDataExcel().get("ExpectedTitleAfterOpeningAccount");
 			String actualTitle = driver.findElement(actualTitleAfterOpeningAccountLocator).getText();
 			Assert.assertEquals(actualTitle, expectedTitle);
 		} catch (Exception e) {

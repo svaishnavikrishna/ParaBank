@@ -23,7 +23,7 @@ public class TransferFundsPage {
 	
 	By transferButtonLocator = By.xpath(properties.getLocator("transferButtonLocator"));
 	
-	By actualTitleAfterOpeningAccountLocator = By.xpath(properties.getLocator("actualTitleAfterOpeningAccountLocator"));
+	By actualTitleAfterTransferringFundsLocator = By.xpath(properties.getLocator("actualTitleAfterTransferringFundsLocator"));
 	
 	
 	public void transferFunds() {
@@ -34,7 +34,7 @@ public class TransferFundsPage {
 			driver.findElement(transferButtonLocator).click(); 
 			Thread.sleep(2000);
 			String expectedTitle = input.readTestDataExcel().get("ExpectedTitleAfterFundTransfer");
-			String actualTitle = driver.findElement(actualTitleAfterOpeningAccountLocator).getText();
+			String actualTitle = driver.findElement(actualTitleAfterTransferringFundsLocator).getText();
 			
 			Assert.assertEquals(actualTitle, expectedTitle);
 			
